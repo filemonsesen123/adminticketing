@@ -14,7 +14,7 @@ app.get('/', function(req, res, next) {
     sess = req.session;
     if(sess.username && sess.status) {
         axios.get('http://54.167.107.139:4000/me').then(response => {
-      var getData = response.data.data.reverse();
+      var getData = response.data.data;
       res.render('laporan/all', {
             name : sess.username,
             status : sess.status, 
