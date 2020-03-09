@@ -45,7 +45,10 @@
                   </th>                        
                   <% if(status == "SuperAdmin" || status == "Admin1"){ %>
                   <th>
-                    <p class="text-center">Action</p>
+                    <p class="text-center">Isi</p>
+                  </th>                        
+                  <th>
+                    <p class="text-center">Gambar</p>
                   </th>                        
                   <th>
                     <p class="text-center">Action</p>
@@ -72,46 +75,42 @@
                     <p class="text-center"><%= data[i].kategori %></p>
                   </td>                        
                   <td>
-                    <p class="text-center"><%= data[i].date %></p>
+                    <p class="text-center"><%= data[i].date.substring(4,16) %></p>
                   </td>                        
                   <td>
                     <p class="text-center"><%= data[i].lokasi %></p>
                   </td>                        
+                  <td>
+                    <p class="text-center"><%= data[i].isipengaduan %></p>
+                  </td>                        
+                  <td>
+                    <p class="text-center"><img src="<%= data[i].photo %>" alt="User Image" style="width: 200px; height:200px;border-radius:10px;"></p>
+                  </td>                        
         <% if(status == "SuperAdmin" || status == "Admin1"){ %>
         <% if(data[i].status == "Diterima"){ %>
-                  <td>
-                    <a href="/kerjakan/<%= data[i].author_id %>" class="text-center"><p style="color: #EF3E5A;">Kerjakan</p></a>
-                  </td>
-                  <td>
-                    <a href="/ketolak/<%= data[i].author_id %>" class="text-center"><p style="color: #EF3E5A;">Tolak</p></a>
+                  <td class="text-center">
+                    <a href="/kerjakan/<%= data[i].author_id %>"><p style="color: #EF3E5A;display:inline-block;margin:0px 10px;">Kerjakan</p></a>
+                    <a href="/ketolak/<%= data[i].author_id %>"><p style="color: #EF3E5A;display:inline-block;margin:0px 10px;">Tolak</p></a>
                   </td>
         <% }else if(data[i].status == "Dikerjakan"){ %>
-                  <td>
-                    <a href="/keselesai/<%= data[i].author_id %>" class="text-center"><p style="color: #EF3E5A;">Selesai</p></a>
-                  </td>
-                  <td>
-                    <a href="/keterima/<%= data[i].author_id %>" class="text-center"><p style="color: #EF3E5A;">Terima</p></a>
+                  <td class="text-center">
+                    <a href="/keselesai/<%= data[i].author_id %>"><p style="color: #EF3E5A;display:inline-block;margin:0px 10px;">Selesai</p></a>
+                    <a href="/keterima/<%= data[i].author_id %>"><p style="color: #EF3E5A;display:inline-block;margin:0px 10px;">Terima</p></a>
                   </td>
         <% }else if(data[i].status == "Ditolak"){ %>
-                  <td>
-                    <a href="/keterima/<%= data[i].author_id %>" class="text-center"><p style="color: #EF3E5A;">Terima</p></a>
-                  </td>
-                  <td>
-                    <a href="/kehapus/<%= data[i].author_id %>" class="text-center"><p style="color: #EF3E5A;">Hapus</p></a>
+                  <td class="text-center">
+                    <a href="/keterima/<%= data[i].author_id %>"><p style="color: #EF3E5A;display:inline-block;margin:0px 10px;">Terima</p></a>
+                    <a href="/kehapus/<%= data[i].author_id %>"><p style="color: #EF3E5A;display:inline-block;margin:0px 10px;">Hapus</p></a>
                   </td>
         <% }else if(data[i].status == "Ditunda"){ %>
-                  <td>
-                    <a href="/keterima/<%= data[i].author_id %>" class="text-center"><p style="color: #EF3E5A;">Terima</p></a>
-                  </td>
-                  <td>
-                    <a href="/ketolak/<%= data[i].author_id %>" class="text-center"><p style="color: #EF3E5A;">Tolak</p></a>
+                  <td class="text-center">
+                    <a href="/keterima/<%= data[i].author_id %>"><p style="color: #EF3E5A;display:inline-block;margin:0px 10px;">Terima</p></a>
+                    <a href="/ketolak/<%= data[i].author_id %>"><p style="color: #EF3E5A;display:inline-block;margin:0px 10px;">Tolak</p></a>
                   </td>
         <% }else if(data[i].status == "Selesai"){ %>
-                  <td>
-                    <a href="/kerjakan/<%= data[i].author_id %>" class="text-center"><p style="color: #EF3E5A;">Kerjakan</p></a>
-                  </td>
-                  <td>
-                    <a href="/kehapus/<%= data[i].author_id %>" class="text-center"><p style="color: #EF3E5A;">Hapus</p></a>
+                  <td class="text-center">
+                    <a href="/kerjakan/<%= data[i].author_id %>"><p style="color: #EF3E5A;display:inline-block;margin:0px 10px;">Kerjakan</p></a>
+                    <a href="/kehapus/<%= data[i].author_id %>"><p style="color: #EF3E5A;display:inline-block;margin:0px 10px;">Hapus</p></a>
                   </td>
                   </tr>
               <% }} %>

@@ -46,6 +46,12 @@
                     Status
                   </th>                        
                   <th>
+                    Isi
+                  </th>                        
+                  <th>
+                    Gambar
+                  </th>                        
+                  <th>
                     Action
                   </th>
                   </tr>
@@ -71,10 +77,16 @@
                     <%= data[i].lokasi %>
                   </td>                        
                   <td>
-                    <%= data[i].date %>
+                    <%= data[i].date.substring(4,16) %>
                   </td>                        
                   <td>
                     <%= data[i].status %>
+                  </td>                        
+                  <td>
+                    <p class="text-center"><%= data[i].isipengaduan %></p>
+                  </td>                        
+                  <td>
+                    <p class="text-center"><img src="<%= data[i].photo %>" alt="User Image" style="width: 200px; height:200px;border-radius:10px;"></p>
                   </td>                        
                   <td>
                     <a href="/laporan/<%= data[i].author_id %>" class="text-center"><p style="color: #EF3E5A;">Show</a>
